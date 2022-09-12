@@ -1,0 +1,8 @@
+{
+  "editor.codeActionsOnSave": [
+    "source.removeUnusedCode",
+    "source.addMissingImports",
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
+}
