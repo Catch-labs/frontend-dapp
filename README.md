@@ -13,6 +13,12 @@ yarn install
 yarn dev
 ```
 
+## MVP screencast video of web3 login and smart contract interaction
+
+I had to deploy this MVP to gcp the get the GPS validation work. The youtube short covers the web3 login and interaction with event token collection.
+
+https://youtube.com/shorts/_F3jQoyDf6E?feature=share
+
 ## Deploy
 
 https://cloud.google.com/run/docs/quickstarts/build-and-deploy
