@@ -1,7 +1,8 @@
 import type { Contract, WalletConnection } from 'near-api-js';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-import { Provider } from 'react-redux';
+import Geocode from 'react-geocode';
+import { Toaster } from 'react-hot-toast';
 
 import 'swiper/css/bundle';
 // tailwind
@@ -16,7 +17,7 @@ import '@fontsource/roboto/latin-700.css';
 
 import Profile from '../components/Profile';
 import { initContract } from '../lib/near-api';
-import store from '../lib/store';
+Geocode.setApiKey(process.env.NEXT_PUBLIC_MAPS_API_KEY as string);
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [contract, setContract] = useState<Contract | null>(null);
@@ -34,12 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <Provider store={store} contract={contract}>
-      <div className="relative">
-        <Profile walletConnection={walletConnection} />
-        <Component {...pageProps} />
-      </div>
-    </Provider>
+    <div className="relative flex-1 justify-center">
+      <Profile walletConnection={walletConnection} user={nearUser} />
+      <Component {...pageProps} web3={contract} user={nearUser} />
+      <Toaster position="bottom-right" reverseOrder={false} />
+    </div>
   );
 }
 

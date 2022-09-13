@@ -1,4 +1,4 @@
-export const CONTRACT_NAME = 'nft-frontend-simple-mint.blockhead.testnet';
+export const CONTRACT_NAME = 'nft.catchlabs.testnet';
 
 export function getConfig(env: string) {
     switch (env) {
