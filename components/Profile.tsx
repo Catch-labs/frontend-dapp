@@ -1,20 +1,27 @@
-import { WalletConnection } from 'near-api-js';
+import type { WalletConnection } from 'near-api-js';
 import { CONTRACT_NAME } from '../config/near';
+import { Button } from './ui';
 
 type ProfileProps = {
-  walletConnection: WalletConnection;
+  walletConnection: WalletConnection | null;
+  user: {
+    accountId: string;
+  };
 };
 
 export default function Profile(props: ProfileProps) {
-  const { walletConnection } = props;
+  const { walletConnection, user } = props;
   return (
-    <button
-      className="cursor-pointer"
-      onClick={() => {
-        walletConnection.requestSignIn({ contractId: CONTRACT_NAME });
-      }}
-    >
-      Login
-    </button>
+    <>
+      <Button
+        variant="secondary"
+        onClick={() => {
+          walletConnection?.requestSignIn({ contractId: CONTRACT_NAME });
+        }}
+      >
+        Login
+      </Button>
+      <p>Current user: {user?.accountId ? user.accountId : null}</p>
+    </>
   );
 }

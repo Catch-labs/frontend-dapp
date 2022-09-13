@@ -21,13 +21,13 @@ https://cloud.google.com/run/docs/quickstarts/build-and-deploy
 
 ```
 gcloud builds submit \
-  --tag gcr.io/$(gcloud config get-value project)/nextjs-on-cloud-run
+  --tag gcr.io/$(gcloud config get-value project)/catch-game-dapp
 ```
 
 ### Deploy image
 
 ```
 gcloud run deploy \
-  --image gcr.io/$(gcloud config get-value project)/nextjs-on-cloud-run \
+  --image gcr.io/$(gcloud config get-value project)/catch-game-dapp \
   --platform managed
 ```
