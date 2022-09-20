@@ -16,6 +16,7 @@ import '@fontsource/roboto/latin-500.css';
 import '@fontsource/roboto/latin-700.css';
 
 import Profile from '../components/Profile';
+import Menu from '../components/ui/Menu';
 import { initContract } from '../lib/near-api';
 Geocode.setApiKey(process.env.NEXT_PUBLIC_MAPS_API_KEY as string);
 
@@ -38,6 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div className="relative flex-1 justify-center">
       <Profile walletConnection={walletConnection} user={nearUser} />
       <Component {...pageProps} web3={contract} user={nearUser} />
+      <Menu />
       <Toaster position="bottom-right" reverseOrder={false} />
     </div>
   );
