@@ -1,9 +1,7 @@
 import BN from 'bn.js';
-import { Button } from 'components/ui';
 import Decimal from 'decimal.js';
 import type { Contract } from 'near-api-js';
 import { useState } from 'react';
-import Geocode from 'react-geocode';
 import { toast } from 'react-hot-toast';
 
 interface Web3Props extends Contract {
@@ -78,7 +76,7 @@ function wallet({ web3, user }: { web3: Web3Props; user: any }) {
 
   return (
     <div>
-      <Button
+      {/* <Button
         onClick={async () => {
           getLocation();
           const nftLocation = await checkNft();
@@ -113,7 +111,7 @@ function wallet({ web3, user }: { web3: Web3Props; user: any }) {
         }}
       >
         Collect
-      </Button>
+      </Button> */}
     </div>
   );
 }
