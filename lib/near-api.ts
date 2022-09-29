@@ -42,7 +42,7 @@ export async function initContract() {
         nearConfig.contractName,
         {
             // View methods are read only. They don't modify the state, but usually return some value.
-            viewMethods: ["nft_token_by_id"],
+            viewMethods: ["nft_token_by_id", "get_event_by_id"],
             // Change methods can modify the state. But you don't receive the returned value when called.
             changeMethods: ["nft_event_register"],
         }
